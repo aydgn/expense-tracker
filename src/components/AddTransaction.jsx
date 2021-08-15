@@ -4,21 +4,25 @@ import { GlobalContext } from "../context/GlobalState";
 export const AddTransaction = () => {
   // States
   const [text, setText] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   // Context
   const { addTransaction } = useContext(GlobalContext);
 
+  // Function to add transaction
   const onSubmit = e => {
+    // Prevent default form submit
     e.preventDefault();
 
-    const newTransaction = {
-      id: Date.now(),
-      text,
-      amount: Number(amount),
-    };
-
-    addTransaction(newTransaction);
+    // add transaction if text and amount are not empty
+    if (text && amount) {
+      const newTransaction = {
+        id: Date.now(),
+        text,
+        amount: Number(amount),
+      };
+      addTransaction(newTransaction);
+    }
   };
 
   return (
@@ -37,13 +41,16 @@ export const AddTransaction = () => {
         <div className="form-control">
           <label htmlFor="amount">
             Amount <br />
-            (negative - expense, positive - income)
+            <i>
+              (<b>negative</b> for <span className="minus">expense</span>,
+              <b> positive</b> for <span className="plus">income</span>)
+            </i>
           </label>
           <input
             type="number"
             value={amount}
             onChange={e => setAmount(e.target.value)}
-            placeholder="250"
+            placeholder="-250"
           />
         </div>
         <button className="btn">Add transaction</button>

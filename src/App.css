@@ -7,25 +7,26 @@
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #eeeeee;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  margin: 0;
+  padding-top: 32px;
+  border-top: 5px solid #ccc;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 }
 
 .container {
   margin: 30px auto;
-  width: 350px;
+  max-width: 350px;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
   font-weight: 100;
+  font-size: 36px;
 }
 
 h3 {
@@ -40,11 +41,12 @@ h4 {
 }
 
 .inc-exp-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #fff;
   box-shadow: var(--box-shadow);
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
   margin: 20px 0;
 }
 
@@ -53,21 +55,17 @@ h4 {
   text-align: center;
 }
 
-.inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
-}
-
 .money {
   font-size: 20px;
   letter-spacing: 1px;
   margin: 5px 0;
 }
 
-.money.plus {
+.plus {
   color: #2ecc71;
 }
 
-.money.minus {
+.minus {
   color: #c0392b;
 }
 
@@ -88,9 +86,9 @@ input[type='number'] {
 
 .btn {
   cursor: pointer;
-  background-color: #9c88ff;
+  background-color: #9bdaff;
   box-shadow: var(--box-shadow);
-  color: #fff;
+  color: rgba(0, 0, 0, 0.493);
   border: 0;
   display: block;
   font-size: 16px;
