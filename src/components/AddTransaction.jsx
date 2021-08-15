@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/GlobalState";
 export const AddTransaction = () => {
   // States
   const [text, setText] = useState("");
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState("0");
 
   // Context
   const { addTransaction } = useContext(GlobalContext);
@@ -42,8 +42,8 @@ export const AddTransaction = () => {
           <label htmlFor="amount">
             Amount <br />
             <i>
-              (<b>negative</b> for <span className="minus">expense</span>,
-              <b> positive</b> for <span className="plus">income</span>)
+              (<b>negative</b> amount for
+              <span className="minus"> expenses</span>)
             </i>
           </label>
           <input
@@ -53,7 +53,16 @@ export const AddTransaction = () => {
             placeholder="-250"
           />
         </div>
-        <button className="btn">Add transaction</button>
+        <button
+
+          className="btn"
+          // if amount is greater than zero, make backgroundColor #2ecc71, if it is less than zero make it #e74c3c, if it is equal to zero make it #f1c40f
+          style={{
+            backgroundColor: amount > 0 ? "#2ecc71" : amount < 0 ? "#e74c3c" : "",
+          }}
+        >
+          {amount > 0 ? "Addding Income" : amount < 0 ? "Adding Expense" : "Add"}
+        </button>
       </form>
     </>
   );

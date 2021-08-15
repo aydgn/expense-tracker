@@ -1,13 +1,9 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-function moneyFormatter(num) {
-  return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
-}
-
 export const Balance = () => {
   // Get the current balance from the context
-  const { transactions } = useContext(GlobalContext);
+  const { transactions, moneyFormatter } = useContext(GlobalContext);
 
   // Return the balance
   const amounts = transactions.map(transaction => transaction.amount);
@@ -18,7 +14,7 @@ export const Balance = () => {
   return (
     <>
       <h4>Your Balance</h4>
-      <h2>{moneyFormatter(total)}</h2>
+      <h2 className={total > 0 ? "plus" : "minus"}>{moneyFormatter(total)}</h2>
     </>
   );
 };

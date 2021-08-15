@@ -2,12 +2,9 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 //Money formatter function
-function moneyFormatter(num) {
-  return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
-}
 
 export const IncomeExpenses = () => {
-  const { transactions } = useContext(GlobalContext);
+  const { transactions, moneyFormatter } = useContext(GlobalContext);
 
   const amounts = transactions.map(transaction => transaction.amount);
 

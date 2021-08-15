@@ -28,12 +28,17 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function moneyFormatter(num) {
+    return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+  }
+
   return (
     <GlobalContext.Provider
       value={{
         transactions: state.transactions,
         deleteTransaction,
         addTransaction,
+        moneyFormatter,
       }}
     >
       {children}

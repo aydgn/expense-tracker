@@ -61,13 +61,7 @@ h4 {
   margin: 5px 0;
 }
 
-.plus {
-  color: #2ecc71;
-}
 
-.minus {
-  color: #c0392b;
-}
 
 label {
   display: inline-block;
@@ -145,4 +139,12 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+.plus {
+  color: #2ecc71;
+}
+
+.minus {
+  color: #c0392b;
 }
