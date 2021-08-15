@@ -3,7 +3,7 @@ import { GlobalContext } from "../context/GlobalState";
 
 //Money formatter function
 function moneyFormatter(num) {
-  return num.toString().replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+  return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
 }
 
 export const IncomeExpenses = () => {

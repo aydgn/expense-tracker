@@ -10,7 +10,7 @@ export const Transaction = ({ transaction }) => {
   const { deleteTransaction } = useContext(GlobalContext);
 
   // Render sign according to the transaction type
-  const sign = transaction.amount < 0 ? "-" : "+";
+  const sign = transaction.amount < 0 ? "" : "+";
 
   return (
     <li className={transaction.amount < 0 ? "minus" : "plus"}>
