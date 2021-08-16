@@ -148,3 +148,8 @@ input[type='number'] {
 .minus {
   color: #c0392b;
 }
+
+.balance {
+  font-size: 32px;
+  font-weight: 900;
+}

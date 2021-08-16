@@ -14,7 +14,12 @@ export const Balance = () => {
   return (
     <>
       <h4>Your Balance</h4>
-      <h2 className={total > 0 ? "plus" : "minus"}>{moneyFormatter(total)}</h2>
+      {/* div with two classname, one for css one for jsx */}
+      <div className="balance">
+        <label className={total > 0 ? "plus" : "minus"} htmlFor="text">
+          {moneyFormatter(total)}
+        </label>
+      </div>
     </>
   );
 };
